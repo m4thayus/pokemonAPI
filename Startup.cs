@@ -43,6 +43,12 @@ namespace pokemonAPI
 
             app.UseAuthorization();
 
+            // Shows UseCors with CorsPolicyBuilder.
+            app.UseCors(builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000");
+                });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
